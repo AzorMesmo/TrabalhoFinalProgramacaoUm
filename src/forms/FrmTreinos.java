@@ -9,7 +9,7 @@ package forms;
  * @author gabri
  */
 public class FrmTreinos extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form FrmTreinos
      */
@@ -59,7 +59,7 @@ public class FrmTreinos extends javax.swing.JFrame {
         });
         jsp_WorkoutsList.setViewportView(jTable1);
 
-        jl_Image.setIcon(new javax.swing.ImageIcon("/home/aluno/Área de Trabalho/TrabalhoFinalPROG1-main/img.jpeg")); // NOI18N
+        jl_Image.setIcon(new javax.swing.ImageIcon("/home/aluno/Área de Trabalho/TrabalhoFinalPROG1-main/src/imgs/SamukaBombadoDefault.png")); // NOI18N
         jl_Image.setText("jLabel1");
 
         jb_Return.setText("Voltar");
@@ -81,9 +81,19 @@ public class FrmTreinos extends javax.swing.JFrame {
 
         buttonGroup1.add(jcb_Core);
         jcb_Core.setText("Core");
+        jcb_Core.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb_CoreActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jcb_Lower);
         jcb_Lower.setText("Inferiores");
+        jcb_Lower.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcb_LowerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jp_AreasLayout = new javax.swing.GroupLayout(jp_Areas);
         jp_Areas.setLayout(jp_AreasLayout);
@@ -121,34 +131,34 @@ public class FrmTreinos extends javax.swing.JFrame {
         jp_MainLayout.setHorizontalGroup(
             jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_MainLayout.createSequentialGroup()
-                .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jp_MainLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jsp_WorkoutsList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jp_Areas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl_Image, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(249, 249, 249))
                     .addGroup(jp_MainLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jb_AddWorkout)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jl_Image, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_Return))
-                .addGap(49, 49, 49))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jb_Return)
+                        .addGap(261, 261, 261))))
         );
         jp_MainLayout.setVerticalGroup(
             jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_MainLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jp_MainLayout.createSequentialGroup()
                         .addComponent(jsp_WorkoutsList, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jp_Areas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jl_Image, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_Image, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jb_AddWorkout)
                     .addComponent(jb_Return))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -158,13 +168,11 @@ public class FrmTreinos extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jp_Main, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jp_Main, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jp_Main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jp_Main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -176,12 +184,20 @@ public class FrmTreinos extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_ReturnActionPerformed
 
     private void jcb_UpperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_UpperActionPerformed
-        // TODO add your handling code here:
+        jl_Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/SamukaBombadoUpper.png")));
     }//GEN-LAST:event_jcb_UpperActionPerformed
 
     private void jb_AddWorkoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_AddWorkoutActionPerformed
         
     }//GEN-LAST:event_jb_AddWorkoutActionPerformed
+
+    private void jcb_CoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_CoreActionPerformed
+        jl_Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/SamukaBombadoCore.png")));
+    }//GEN-LAST:event_jcb_CoreActionPerformed
+
+    private void jcb_LowerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_LowerActionPerformed
+        jl_Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/SamukaBombadoLower.png")));
+    }//GEN-LAST:event_jcb_LowerActionPerformed
 
     /**
      * @param args the command line arguments

@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/gabri/OneDrive/Documentos/NetBeansProjects/TrabalhoFinal/src/forms/FrmAddAlimento.java</file>
-            <file>file:/C:/Users/gabri/OneDrive/Documentos/NetBeansProjects/TrabalhoFinal/src/forms/FrmDieta.java</file>
-            <file>file:/C:/Users/gabri/OneDrive/Documentos/NetBeansProjects/TrabalhoFinal/src/forms/FrmPrincipal.java</file>
-            <file>file:/C:/Users/gabri/OneDrive/Documentos/NetBeansProjects/TrabalhoFinal/src/forms/FrmTreinos.java</file>
-            <file>file:/C:/Users/gabri/OneDrive/Documentos/NetBeansProjects/TrabalhoFinal/src/forms/FrmAlimentos.java</file>
+            <file>file:/home/aluno/Área%20de%20Trabalho/TrabalhoFinalPROG1-main/src/forms/FrmPrincipal.java</file>
+            <file>file:/home/aluno/Área%20de%20Trabalho/TrabalhoFinalPROG1-main/src/forms/FrmTreinos.java</file>
+            <file>file:/home/aluno/Área%20de%20Trabalho/TrabalhoFinalPROG1-main/src/forms/FrmAdicionarAlimentos.java</file>
+            <file>file:/home/aluno/Área%20de%20Trabalho/TrabalhoFinalPROG1-main/src/forms/DBController.java</file>
+            <file>file:/home/aluno/Área%20de%20Trabalho/TrabalhoFinalPROG1-main/src/forms/FrmAdicionarTreinos.java</file>
         </group>
     </open-files>
 </project-private>

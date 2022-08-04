@@ -188,7 +188,8 @@ public class FrmTreinos extends javax.swing.JFrame {
     }//GEN-LAST:event_jcb_UpperActionPerformed
 
     private void jb_AddWorkoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_AddWorkoutActionPerformed
-        
+        FrmAddExercicio ft = new FrmAddExercicio();
+        ft.setVisible(true);
     }//GEN-LAST:event_jb_AddWorkoutActionPerformed
 
     private void jcb_CoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_CoreActionPerformed

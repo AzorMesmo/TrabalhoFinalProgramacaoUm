@@ -4,6 +4,8 @@
  */
 package forms;
 
+import javax.swing.*;
+
 /**
  *
  * @author gabri
@@ -26,35 +28,122 @@ public class FrmAddAlimento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jp_Main = new javax.swing.JPanel();
+        jb_Form = new javax.swing.JPanel();
+        jl_Name = new javax.swing.JLabel();
+        jtf_Name = new javax.swing.JTextField();
+        jl_Protein = new javax.swing.JLabel();
+        jtf_Protein = new javax.swing.JTextField();
+        jl_Carbohydrate = new javax.swing.JLabel();
+        jtf_Carbohydrate = new javax.swing.JTextField();
+        jl_Fat = new javax.swing.JLabel();
+        jtf_Fat = new javax.swing.JTextField();
+        jl_Calorie = new javax.swing.JLabel();
+        jtf_Calorie = new javax.swing.JTextField();
+        jb_Return = new javax.swing.JButton();
+        jb_AddFood = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        jp_Main.setBorder(javax.swing.BorderFactory.createTitledBorder("Adição de Alimentos"));
 
-        jTextField1.setText("jTextField1");
+        jl_Name.setText("Nome");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jl_Protein.setText("Proteina");
+
+        jl_Carbohydrate.setText("Carboidrato");
+
+        jl_Fat.setText("Gordura");
+
+        jl_Calorie.setText("Calorias");
+
+        javax.swing.GroupLayout jb_FormLayout = new javax.swing.GroupLayout(jb_Form);
+        jb_Form.setLayout(jb_FormLayout);
+        jb_FormLayout.setHorizontalGroup(
+            jb_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jb_FormLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(492, Short.MAX_VALUE))
+                .addGroup(jb_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtf_Protein, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                    .addComponent(jtf_Name)
+                    .addComponent(jtf_Carbohydrate)
+                    .addComponent(jtf_Fat)
+                    .addComponent(jtf_Calorie)
+                    .addGroup(jb_FormLayout.createSequentialGroup()
+                        .addGroup(jb_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_Calorie)
+                            .addComponent(jl_Protein)
+                            .addComponent(jl_Name)
+                            .addComponent(jl_Carbohydrate)
+                            .addComponent(jl_Fat))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
+        jb_FormLayout.setVerticalGroup(
+            jb_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jb_FormLayout.createSequentialGroup()
+                .addComponent(jl_Name)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(346, Short.MAX_VALUE))
+                .addComponent(jtf_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jl_Protein)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtf_Protein, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jl_Carbohydrate)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtf_Carbohydrate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jl_Fat)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtf_Fat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jl_Calorie)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtf_Calorie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jb_Return.setText("Voltar");
+        jb_Return.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_ReturnActionPerformed(evt);
+            }
+        });
+
+        jb_AddFood.setText("Adicionar");
+        jb_AddFood.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_AddFoodActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jp_MainLayout = new javax.swing.GroupLayout(jp_Main);
+        jp_Main.setLayout(jp_MainLayout);
+        jp_MainLayout.setHorizontalGroup(
+            jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_MainLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jp_MainLayout.createSequentialGroup()
+                        .addComponent(jb_Form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jp_MainLayout.createSequentialGroup()
+                        .addComponent(jb_AddFood)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jb_Return)))
+                .addContainerGap())
+        );
+        jp_MainLayout.setVerticalGroup(
+            jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_MainLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jb_Form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_AddFood)
+                    .addComponent(jb_Return))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -63,19 +152,44 @@ public class FrmAddAlimento extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jp_Main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jp_Main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jb_ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_ReturnActionPerformed
+        dispose();
+    }//GEN-LAST:event_jb_ReturnActionPerformed
+
+    private void jb_AddFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_AddFoodActionPerformed
+        DBController db = new DBController("fitpro.db");
+        
+        String name = jtf_Name.getText(), protein = jtf_Protein.getText(), carbohydrate = jtf_Carbohydrate.getText(), fat = jtf_Fat.getText(), calorie = jtf_Calorie.getText();
+        
+        try {
+            
+            if(name.equals("") || protein.equals("") || carbohydrate.equals("") || fat.equals("") || calorie.equals("")){
+                JOptionPane.showMessageDialog(this, "Falta Informações Para O Cadastro !");
+            } else {
+                db.connect();
+                db.setFood(name, protein, carbohydrate, fat, calorie);
+                db.disconnect();
+                JOptionPane.showMessageDialog(this, "Comida Cadastrada Com Sucesso !");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Erro: " + e.getMessage());
+        }
+    }//GEN-LAST:event_jb_AddFoodActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,8 +227,19 @@ public class FrmAddAlimento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton jb_AddFood;
+    private javax.swing.JPanel jb_Form;
+    private javax.swing.JButton jb_Return;
+    private javax.swing.JLabel jl_Calorie;
+    private javax.swing.JLabel jl_Carbohydrate;
+    private javax.swing.JLabel jl_Fat;
+    private javax.swing.JLabel jl_Name;
+    private javax.swing.JLabel jl_Protein;
+    private javax.swing.JPanel jp_Main;
+    private javax.swing.JTextField jtf_Calorie;
+    private javax.swing.JTextField jtf_Carbohydrate;
+    private javax.swing.JTextField jtf_Fat;
+    private javax.swing.JTextField jtf_Name;
+    private javax.swing.JTextField jtf_Protein;
     // End of variables declaration//GEN-END:variables
 }

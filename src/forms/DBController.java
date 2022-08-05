@@ -60,6 +60,19 @@ public class DBController {
         return rset;
     }
     
+    public ResultSet getWorkouts() throws Exception {
+        String sel = "SELECT * FROM workouts";
+        ResultSet rset = null;
+        
+        try {
+            Statement stmt = this.dbConn.createStatement();
+            rset = stmt.executeQuery(sel);
+        } catch (SQLException e) {
+            throw new Exception("Search Error:" + e.getMessage());
+        }
+        return rset;
+    }
+    
     public void deleteWorkout(String name) throws Exception {
         String del = "DELETE FROM workouts WHERE name='" + name + "'";
         PreparedStatement stmt;

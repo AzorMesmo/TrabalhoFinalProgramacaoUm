@@ -20,6 +20,7 @@ public class FrmTreinos extends javax.swing.JFrame {
     public FrmTreinos() {
         initComponents();
         jl_Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/SamukaBombadoDefault.png")));
+        loadWorkoutsData();
     }
     
     public void loadWorkoutData(String area) {
@@ -28,6 +29,26 @@ public class FrmTreinos extends javax.swing.JFrame {
         try {
             db.connect();
             ResultSet rset = db.getWorkout(area);
+            DefaultTableModel table = new DefaultTableModel(new String[]{"Nome", "Intensidade", "Dificuldade"}, 0);
+            
+            while(rset.next()){
+                table.addRow(new Object[]{rset.getString("name"), rset.getString("intensity"), rset.getString("difficult")});
+            }
+            
+            jt_Workouts.setModel(table);
+            
+            db.disconnect();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }
+    
+    public void loadWorkoutsData() {
+        DBController db = new DBController("fitpro.db");
+        
+        try {
+            db.connect();
+            ResultSet rset = db.getWorkouts();
             DefaultTableModel table = new DefaultTableModel(new String[]{"Nome", "Intensidade", "Dificuldade"}, 0);
             
             while(rset.next()){
@@ -262,6 +283,8 @@ public class FrmTreinos extends javax.swing.JFrame {
         }
         if(jcb_Lower.isSelected()){
             loadWorkoutData("Lower");
+        } else {
+            loadWorkoutsData();
         }
     }//GEN-LAST:event_jb_RefreshActionPerformed
 

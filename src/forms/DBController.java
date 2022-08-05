@@ -60,6 +60,18 @@ public class DBController {
         return rset;
     }
     
+    public void deleteWorkout(String name) throws Exception {
+        String del = "DELETE FROM workouts WHERE name='" + name + "'";
+        PreparedStatement stmt;
+        
+        try {
+            stmt = this.dbConn.prepareStatement(del);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new Exception("Delete Error: " + e.getMessage());
+        }
+    }
+    
     // FOODS
     
     public void setFood(String name, String protein, String carbohydrate, String fat, String calorie) throws Exception {
@@ -90,5 +102,17 @@ public class DBController {
             throw new Exception("Search Error:" + e.getMessage());
         }
         return rset;
+    }
+    
+    public void deleteFood(String name) throws Exception {
+        String del = "DELETE FROM foods WHERE name='" + name + "'";
+        PreparedStatement stmt;
+        
+        try {
+            stmt = this.dbConn.prepareStatement(del);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new Exception("Delete Error: " + e.getMessage());
+        }
     }
 }

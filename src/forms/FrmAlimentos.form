@@ -42,6 +42,8 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jb_AddFood" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jb_Delete" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jb_Refresh" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="jb_Return" min="-2" max="-2" attributes="0"/>
@@ -60,6 +62,7 @@
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="jb_AddFood" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jb_Refresh" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jb_Delete" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -144,6 +147,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_RefreshActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jb_Delete">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Excluir Alimento"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_DeleteActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

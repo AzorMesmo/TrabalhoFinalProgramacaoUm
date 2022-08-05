@@ -12,6 +12,8 @@ import javax.swing.*;
  */
 public class FrmAddExercicio extends javax.swing.JFrame {
 
+    boolean unselected = false;
+    
     /**
      * Creates new form FrmAddExercicio
      */
@@ -305,13 +307,16 @@ public class FrmAddExercicio extends javax.swing.JFrame {
                 db.connect();
                 db.setWorkout(name, intensity, difficult, area);
                 db.disconnect();
+                jtf_Name.setText("");
+                bg_Intensity.clearSelection();
+                bg_Difficult.clearSelection();
+                bg_Areas.clearSelection();
                 JOptionPane.showMessageDialog(this, "Exercício Cadastrado Com Sucesso !");
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Erro: " + e.getMessage());
+            dispose();
         }
-        
-        dispose();
     }//GEN-LAST:event_jb_AddWorkoutActionPerformed
 
     /**

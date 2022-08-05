@@ -13,7 +13,7 @@ import javax.swing.table.*;
  * @author gabri
  */
 public class FrmAlimentos extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form FrmAlimentos
      */
@@ -58,6 +58,7 @@ public class FrmAlimentos extends javax.swing.JFrame {
         jb_Return = new javax.swing.JButton();
         jb_AddFood = new javax.swing.JButton();
         jb_Refresh = new javax.swing.JButton();
+        jb_Delete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -116,6 +117,13 @@ public class FrmAlimentos extends javax.swing.JFrame {
             }
         });
 
+        jb_Delete.setText("Excluir Alimento");
+        jb_Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_DeleteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jp_MainLayout = new javax.swing.GroupLayout(jp_Main);
         jp_Main.setLayout(jp_MainLayout);
         jp_MainLayout.setHorizontalGroup(
@@ -123,6 +131,8 @@ public class FrmAlimentos extends javax.swing.JFrame {
             .addGroup(jp_MainLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jb_AddFood)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jb_Delete)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jb_Refresh)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -139,7 +149,8 @@ public class FrmAlimentos extends javax.swing.JFrame {
                     .addComponent(jb_Return)
                     .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jb_AddFood)
-                        .addComponent(jb_Refresh)))
+                        .addComponent(jb_Refresh)
+                        .addComponent(jb_Delete)))
                 .addContainerGap())
         );
 
@@ -170,6 +181,11 @@ public class FrmAlimentos extends javax.swing.JFrame {
     private void jb_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_RefreshActionPerformed
         loadFoodData();
     }//GEN-LAST:event_jb_RefreshActionPerformed
+
+    private void jb_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_DeleteActionPerformed
+        FrmDeleteAlimento ft = new FrmDeleteAlimento();
+        ft.setVisible(true);
+    }//GEN-LAST:event_jb_DeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,6 +219,7 @@ public class FrmAlimentos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jb_AddFood;
+    private javax.swing.JButton jb_Delete;
     private javax.swing.JButton jb_Refresh;
     private javax.swing.JButton jb_Return;
     private javax.swing.JPanel jp_Main;

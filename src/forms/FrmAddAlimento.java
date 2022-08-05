@@ -186,8 +186,12 @@ public class FrmAddAlimento extends javax.swing.JFrame {
                 db.connect();
                 db.setFood(name, protein, carbohydrate, fat, calorie);
                 db.disconnect();
+                jtf_Name.setText("");
+                jtf_Protein.setText("");
+                jtf_Carbohydrate.setText("");
+                jtf_Fat.setText("");
+                jtf_Calorie.setText("");
                 JOptionPane.showMessageDialog(this, "Comida Cadastrada Com Sucesso !");
-                dispose();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Erro: " + e.getMessage());

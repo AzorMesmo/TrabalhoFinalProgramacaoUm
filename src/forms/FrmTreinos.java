@@ -63,13 +63,13 @@ public class FrmTreinos extends javax.swing.JFrame {
         jcb_Lower = new javax.swing.JCheckBox();
         jb_AddWorkout = new javax.swing.JButton();
         jb_Refresh = new javax.swing.JButton();
+        jb_Delete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jt_Workouts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Nome", "Intensidade", "Dificuldade"
@@ -163,6 +163,13 @@ public class FrmTreinos extends javax.swing.JFrame {
             }
         });
 
+        jb_Delete.setText("Excluir Exercício");
+        jb_Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_DeleteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jp_MainLayout = new javax.swing.GroupLayout(jp_Main);
         jp_Main.setLayout(jp_MainLayout);
         jp_MainLayout.setHorizontalGroup(
@@ -179,6 +186,8 @@ public class FrmTreinos extends javax.swing.JFrame {
                         .addComponent(jl_Image, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jp_MainLayout.createSequentialGroup()
                         .addComponent(jb_AddWorkout)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jb_Delete)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jb_Refresh)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -199,6 +208,7 @@ public class FrmTreinos extends javax.swing.JFrame {
                 .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jb_AddWorkout)
+                        .addComponent(jb_Delete)
                         .addComponent(jb_Refresh))
                     .addComponent(jb_Return))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -255,6 +265,11 @@ public class FrmTreinos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_RefreshActionPerformed
 
+    private void jb_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_DeleteActionPerformed
+        FrmDeleteExercicio ft = new FrmDeleteExercicio();
+        ft.setVisible(true);
+    }//GEN-LAST:event_jb_DeleteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -288,6 +303,7 @@ public class FrmTreinos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jb_AddWorkout;
+    private javax.swing.JButton jb_Delete;
     private javax.swing.JButton jb_Refresh;
     private javax.swing.JButton jb_Return;
     private javax.swing.JCheckBox jcb_Core;

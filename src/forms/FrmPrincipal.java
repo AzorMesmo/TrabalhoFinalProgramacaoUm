@@ -27,22 +27,44 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jp_Main = new javax.swing.JPanel();
+        jp_Logo = new javax.swing.JPanel();
+        jl_Logo = new javax.swing.JLabel();
         jp_Workouts = new javax.swing.JPanel();
-        jb_GoToWorkouts = new javax.swing.JButton();
         jl_WorkoutsDesc = new javax.swing.JLabel();
+        jb_GoToWorkouts = new javax.swing.JButton();
         jp_Foods = new javax.swing.JPanel();
-        jb_GoToFoods = new javax.swing.JButton();
         jl_FoodsDesc = new javax.swing.JLabel();
-        jp_Diet = new javax.swing.JPanel();
-        jb_GoToDiet = new javax.swing.JButton();
-        jl_DietDesc = new javax.swing.JLabel();
+        jb_GoToFoods = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Fit Pro");
 
         jp_Main.setPreferredSize(new java.awt.Dimension(500, 500));
 
+        jp_Logo.setBackground(new java.awt.Color(255, 123, 37));
+        jp_Logo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(114, 114, 114), 2));
+
+        jl_Logo.setFont(new java.awt.Font("Georgia", 3, 84)); // NOI18N
+        jl_Logo.setForeground(new java.awt.Color(229, 229, 229));
+        jl_Logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_Logo.setText("FitPRO");
+
+        javax.swing.GroupLayout jp_LogoLayout = new javax.swing.GroupLayout(jp_Logo);
+        jp_Logo.setLayout(jp_LogoLayout);
+        jp_LogoLayout.setHorizontalGroup(
+            jp_LogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_Logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jp_LogoLayout.setVerticalGroup(
+            jp_LogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jl_Logo, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+        );
+
         jp_Workouts.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Treinos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
+
+        jl_WorkoutsDesc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_WorkoutsDesc.setText("Área destinada a criação de treinos personalizados.");
+        jl_WorkoutsDesc.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição"));
 
         jb_GoToWorkouts.setText("Exibir");
         jb_GoToWorkouts.addActionListener(new java.awt.event.ActionListener() {
@@ -51,33 +73,30 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jl_WorkoutsDesc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_WorkoutsDesc.setText("Área destinada a criação de trinos personalizados");
-        jl_WorkoutsDesc.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição"));
-
         javax.swing.GroupLayout jp_WorkoutsLayout = new javax.swing.GroupLayout(jp_Workouts);
         jp_Workouts.setLayout(jp_WorkoutsLayout);
         jp_WorkoutsLayout.setHorizontalGroup(
             jp_WorkoutsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_WorkoutsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jp_WorkoutsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_WorkoutsLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jb_GoToWorkouts))
-                    .addComponent(jl_WorkoutsDesc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(jl_WorkoutsDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jb_GoToWorkouts)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jp_WorkoutsLayout.setVerticalGroup(
             jp_WorkoutsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_WorkoutsLayout.createSequentialGroup()
-                .addComponent(jl_WorkoutsDesc)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jb_GoToWorkouts)
-                .addContainerGap())
+            .addGroup(jp_WorkoutsLayout.createSequentialGroup()
+                .addGroup(jp_WorkoutsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jl_WorkoutsDesc)
+                    .addComponent(jb_GoToWorkouts, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jp_Foods.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alimentos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
+
+        jl_FoodsDesc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jl_FoodsDesc.setText("Área destinada a descrição nutricional de alimentos.");
+        jl_FoodsDesc.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição"));
 
         jb_GoToFoods.setText("Exibir");
         jb_GoToFoods.addActionListener(new java.awt.event.ActionListener() {
@@ -86,65 +105,22 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jl_FoodsDesc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_FoodsDesc.setText("Área destinada a descrição nutricional de certos alimentos");
-        jl_FoodsDesc.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição"));
-
         javax.swing.GroupLayout jp_FoodsLayout = new javax.swing.GroupLayout(jp_Foods);
         jp_Foods.setLayout(jp_FoodsLayout);
         jp_FoodsLayout.setHorizontalGroup(
             jp_FoodsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_FoodsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jp_FoodsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_FoodsLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jb_GoToFoods))
-                    .addComponent(jl_FoodsDesc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jp_FoodsLayout.setVerticalGroup(
-            jp_FoodsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_FoodsLayout.createSequentialGroup()
-                .addComponent(jl_FoodsDesc)
+                .addComponent(jl_FoodsDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jb_GoToFoods)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jp_Diet.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dieta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
-
-        jb_GoToDiet.setText("Exibir");
-        jb_GoToDiet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jb_GoToDietActionPerformed(evt);
-            }
-        });
-
-        jl_DietDesc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jl_DietDesc.setText("Área destinada a visualização de ganhos nutricionais ao longo de tempo desejado");
-        jl_DietDesc.setBorder(javax.swing.BorderFactory.createTitledBorder("Descrição"));
-
-        javax.swing.GroupLayout jp_DietLayout = new javax.swing.GroupLayout(jp_Diet);
-        jp_Diet.setLayout(jp_DietLayout);
-        jp_DietLayout.setHorizontalGroup(
-            jp_DietLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_DietLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jp_DietLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_DietLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jb_GoToDiet))
-                    .addComponent(jl_DietDesc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jp_DietLayout.setVerticalGroup(
-            jp_DietLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_DietLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jl_DietDesc)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jb_GoToDiet)
+        jp_FoodsLayout.setVerticalGroup(
+            jp_FoodsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_FoodsLayout.createSequentialGroup()
+                .addGroup(jp_FoodsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jl_FoodsDesc)
+                    .addComponent(jb_GoToFoods, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -153,21 +129,23 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jp_MainLayout.setHorizontalGroup(
             jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_MainLayout.createSequentialGroup()
-                .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jp_Workouts, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jp_Foods, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jp_Diet, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jp_Foods, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jp_Logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jp_MainLayout.setVerticalGroup(
             jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_MainLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jp_Logo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jp_Workouts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jp_Foods, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jp_Diet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -176,14 +154,15 @@ public class FrmPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jp_Main, javax.swing.GroupLayout.PREFERRED_SIZE, 594, Short.MAX_VALUE))
+                .addComponent(jp_Main, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jp_Main, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jp_Main, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
@@ -199,11 +178,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         FrmAlimentos fa = new FrmAlimentos();
         fa.setVisible(true);
     }//GEN-LAST:event_jb_GoToFoodsActionPerformed
-
-    private void jb_GoToDietActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_GoToDietActionPerformed
-        FrmDieta fd = new FrmDieta();
-        fd.setVisible(true);
-    }//GEN-LAST:event_jb_GoToDietActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,14 +210,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jb_GoToDiet;
     private javax.swing.JButton jb_GoToFoods;
     private javax.swing.JButton jb_GoToWorkouts;
-    private javax.swing.JLabel jl_DietDesc;
     private javax.swing.JLabel jl_FoodsDesc;
+    private javax.swing.JLabel jl_Logo;
     private javax.swing.JLabel jl_WorkoutsDesc;
-    private javax.swing.JPanel jp_Diet;
     private javax.swing.JPanel jp_Foods;
+    private javax.swing.JPanel jp_Logo;
     private javax.swing.JPanel jp_Main;
     private javax.swing.JPanel jp_Workouts;
     // End of variables declaration//GEN-END:variables

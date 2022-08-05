@@ -2,7 +2,11 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    <Component class="javax.swing.ButtonGroup" name="bg_Intensity">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="bg_Difficult">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="bg_Areas">
     </Component>
   </NonVisualComponents>
   <Properties>
@@ -36,10 +40,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Component id="jp_Main" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
+          <Component id="jp_Main" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -62,7 +63,7 @@
                           <Component id="jb_Return" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -94,16 +95,18 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jp_Intensity" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jp_Difficult" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jp_Areas" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <Component id="jl_Name" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jl_Difficult" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jl_Intensity" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jp_Areas" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtf_Name" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jtf_Intensity" max="32767" attributes="0"/>
-                          <Component id="jtf_Difficult" pref="234" max="32767" attributes="0"/>
+                          <Component id="jtf_Name" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -116,16 +119,12 @@
                       <Component id="jl_Name" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jtf_Name" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jl_Intensity" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jtf_Intensity" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jl_Difficult" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jtf_Difficult" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jp_Areas" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jp_Areas" min="-2" max="-2" attributes="0"/>
+                          <Component id="jp_Intensity" min="-2" max="-2" attributes="0"/>
+                          <Component id="jp_Difficult" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -138,20 +137,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jtf_Name">
-            </Component>
-            <Component class="javax.swing.JLabel" name="jl_Intensity">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Intensidade"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jtf_Intensity">
-            </Component>
-            <Component class="javax.swing.JLabel" name="jl_Difficult">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Dificuldade"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jtf_Difficult">
             </Component>
             <Container class="javax.swing.JPanel" name="jp_Areas">
               <Properties>
@@ -172,7 +157,7 @@
                               <Component id="jcb_Core" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jcb_Lower" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="23" max="32767" attributes="0"/>
+                          <EmptySpace pref="22" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -194,7 +179,7 @@
                 <Component class="javax.swing.JCheckBox" name="jcb_Upper">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="buttonGroup1"/>
+                      <ComponentRef name="bg_Areas"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Superior"/>
                   </Properties>
@@ -202,7 +187,7 @@
                 <Component class="javax.swing.JCheckBox" name="jcb_Core">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="buttonGroup1"/>
+                      <ComponentRef name="bg_Areas"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Core"/>
                   </Properties>
@@ -210,9 +195,137 @@
                 <Component class="javax.swing.JCheckBox" name="jcb_Lower">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                      <ComponentRef name="buttonGroup1"/>
+                      <ComponentRef name="bg_Areas"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Inferior"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jp_Difficult">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                    <TitledBorder title="Dificuldade"/>
+                  </Border>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jcb_DifHigh" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcb_DifMedium" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcb_DifLow" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jcb_DifHigh" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jcb_DifMedium" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jcb_DifLow" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JCheckBox" name="jcb_DifHigh">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="bg_Difficult"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Alta"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="jcb_DifMedium">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="bg_Difficult"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="M&#xe9;dia"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="jcb_DifLow">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="bg_Difficult"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Baixa"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jp_Intensity">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                    <TitledBorder title="Intensidade"/>
+                  </Border>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jcb_IntHigh" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcb_IntMedium" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jcb_IntLow" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jcb_IntHigh" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jcb_IntMedium" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jcb_IntLow" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JCheckBox" name="jcb_IntHigh">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="bg_Intensity"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Alta"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="jcb_IntMedium">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="bg_Intensity"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="M&#xe9;dia"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JCheckBox" name="jcb_IntLow">
+                  <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="bg_Intensity"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Baixa"/>
                   </Properties>
                 </Component>
               </SubComponents>

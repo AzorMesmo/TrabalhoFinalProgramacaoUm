@@ -60,25 +60,6 @@ public class DBController {
         return rset;
     }
     
-    public DefaultTableModel loadWorkoutData(String area) throws Exception {
-        DBController db = new DBController("fitpro.db");
-        
-        try {
-            db.connect();
-            ResultSet rset = db.getWorkout(area);
-            DefaultTableModel table = new DefaultTableModel(new String[]{"Name", "Intensity", "Difficult", "Area"}, 0);
-            
-            while(rset.next()){
-                table.addRow(new Object[]{rset.getString("name"), rset.getString("intensity"), rset.getString("difficult"), rset.getString("area")});
-            }
-            
-            db.disconnect();
-            return table;
-        } catch (Exception e) {
-            throw new Exception("Load Data Error:" + e.getMessage());
-        }
-    }
-    
     // FOODS
     
     public void setFood(String name, String protein, String carbohydrate, String fat, String calorie) throws Exception {
@@ -98,7 +79,7 @@ public class DBController {
         }
     }
     
-    public ResultSet getFood(String area) throws Exception {
+    public ResultSet getFood() throws Exception {
         String sel = "SELECT * FROM foods";
         ResultSet rset = null;
         
@@ -109,24 +90,5 @@ public class DBController {
             throw new Exception("Search Error:" + e.getMessage());
         }
         return rset;
-    }
-    
-    public DefaultTableModel loadFoodData(String area) throws Exception {
-        DBController db = new DBController("fitpro.db");
-        
-        try {
-            db.connect();
-            ResultSet rset = db.getFood(area);
-            DefaultTableModel table = new DefaultTableModel(new String[]{"Name", "Protein", "Carbohydrate", "Fat", "Calorie"}, 0);
-            
-            while(rset.next()){
-                table.addRow(new Object[]{rset.getString("name"), rset.getString("protein"), rset.getString("carbohydrate"), rset.getString("fat"), rset.getString("calorie")});
-            }
-            
-            db.disconnect();
-            return table;
-        } catch (Exception e) {
-            throw new Exception("Load Data Error:" + e.getMessage());
-        }
     }
 }

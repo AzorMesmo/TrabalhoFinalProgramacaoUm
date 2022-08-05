@@ -28,19 +28,25 @@ public class FrmAddExercicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        bg_Intensity = new javax.swing.ButtonGroup();
+        bg_Difficult = new javax.swing.ButtonGroup();
+        bg_Areas = new javax.swing.ButtonGroup();
         jp_Main = new javax.swing.JPanel();
         jp_Form = new javax.swing.JPanel();
         jl_Name = new javax.swing.JLabel();
         jtf_Name = new javax.swing.JTextField();
-        jl_Intensity = new javax.swing.JLabel();
-        jtf_Intensity = new javax.swing.JTextField();
-        jl_Difficult = new javax.swing.JLabel();
-        jtf_Difficult = new javax.swing.JTextField();
         jp_Areas = new javax.swing.JPanel();
         jcb_Upper = new javax.swing.JCheckBox();
         jcb_Core = new javax.swing.JCheckBox();
         jcb_Lower = new javax.swing.JCheckBox();
+        jp_Difficult = new javax.swing.JPanel();
+        jcb_DifHigh = new javax.swing.JCheckBox();
+        jcb_DifMedium = new javax.swing.JCheckBox();
+        jcb_DifLow = new javax.swing.JCheckBox();
+        jp_Intensity = new javax.swing.JPanel();
+        jcb_IntHigh = new javax.swing.JCheckBox();
+        jcb_IntMedium = new javax.swing.JCheckBox();
+        jcb_IntLow = new javax.swing.JCheckBox();
         jb_Return = new javax.swing.JButton();
         jb_AddWorkout = new javax.swing.JButton();
 
@@ -50,19 +56,15 @@ public class FrmAddExercicio extends javax.swing.JFrame {
 
         jl_Name.setText("Nome");
 
-        jl_Intensity.setText("Intensidade");
-
-        jl_Difficult.setText("Dificuldade");
-
         jp_Areas.setBorder(javax.swing.BorderFactory.createTitledBorder("Área de Ativação"));
 
-        buttonGroup1.add(jcb_Upper);
+        bg_Areas.add(jcb_Upper);
         jcb_Upper.setText("Superior");
 
-        buttonGroup1.add(jcb_Core);
+        bg_Areas.add(jcb_Core);
         jcb_Core.setText("Core");
 
-        buttonGroup1.add(jcb_Lower);
+        bg_Areas.add(jcb_Lower);
         jcb_Lower.setText("Inferior");
 
         javax.swing.GroupLayout jp_AreasLayout = new javax.swing.GroupLayout(jp_Areas);
@@ -75,7 +77,7 @@ public class FrmAddExercicio extends javax.swing.JFrame {
                     .addComponent(jcb_Upper)
                     .addComponent(jcb_Core)
                     .addComponent(jcb_Lower))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jp_AreasLayout.setVerticalGroup(
             jp_AreasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,6 +91,76 @@ public class FrmAddExercicio extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jp_Difficult.setBorder(javax.swing.BorderFactory.createTitledBorder("Dificuldade"));
+
+        bg_Difficult.add(jcb_DifHigh);
+        jcb_DifHigh.setText("Alta");
+
+        bg_Difficult.add(jcb_DifMedium);
+        jcb_DifMedium.setText("Média");
+
+        bg_Difficult.add(jcb_DifLow);
+        jcb_DifLow.setText("Baixa");
+
+        javax.swing.GroupLayout jp_DifficultLayout = new javax.swing.GroupLayout(jp_Difficult);
+        jp_Difficult.setLayout(jp_DifficultLayout);
+        jp_DifficultLayout.setHorizontalGroup(
+            jp_DifficultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_DifficultLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_DifficultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jcb_DifHigh)
+                    .addComponent(jcb_DifMedium)
+                    .addComponent(jcb_DifLow))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jp_DifficultLayout.setVerticalGroup(
+            jp_DifficultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_DifficultLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jcb_DifHigh)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jcb_DifMedium)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jcb_DifLow)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jp_Intensity.setBorder(javax.swing.BorderFactory.createTitledBorder("Intensidade"));
+
+        bg_Intensity.add(jcb_IntHigh);
+        jcb_IntHigh.setText("Alta");
+
+        bg_Intensity.add(jcb_IntMedium);
+        jcb_IntMedium.setText("Média");
+
+        bg_Intensity.add(jcb_IntLow);
+        jcb_IntLow.setText("Baixa");
+
+        javax.swing.GroupLayout jp_IntensityLayout = new javax.swing.GroupLayout(jp_Intensity);
+        jp_Intensity.setLayout(jp_IntensityLayout);
+        jp_IntensityLayout.setHorizontalGroup(
+            jp_IntensityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_IntensityLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jp_IntensityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jcb_IntHigh)
+                    .addComponent(jcb_IntMedium)
+                    .addComponent(jcb_IntLow))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jp_IntensityLayout.setVerticalGroup(
+            jp_IntensityLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_IntensityLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jcb_IntHigh)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jcb_IntMedium)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jcb_IntLow)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jp_FormLayout = new javax.swing.GroupLayout(jp_Form);
         jp_Form.setLayout(jp_FormLayout);
         jp_FormLayout.setHorizontalGroup(
@@ -96,13 +168,14 @@ public class FrmAddExercicio extends javax.swing.JFrame {
             .addGroup(jp_FormLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jp_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jp_FormLayout.createSequentialGroup()
+                        .addComponent(jp_Intensity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jp_Difficult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jp_Areas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jl_Name)
-                    .addComponent(jl_Difficult)
-                    .addComponent(jl_Intensity)
-                    .addComponent(jp_Areas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtf_Name)
-                    .addComponent(jtf_Intensity)
-                    .addComponent(jtf_Difficult, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE))
+                    .addComponent(jtf_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jp_FormLayout.setVerticalGroup(
@@ -112,16 +185,11 @@ public class FrmAddExercicio extends javax.swing.JFrame {
                 .addComponent(jl_Name)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtf_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jl_Intensity)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jtf_Intensity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jl_Difficult)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jtf_Difficult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jp_Areas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jp_FormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jp_Areas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jp_Intensity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jp_Difficult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -153,7 +221,7 @@ public class FrmAddExercicio extends javax.swing.JFrame {
                         .addComponent(jb_AddWorkout)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jb_Return)))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jp_MainLayout.setVerticalGroup(
             jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,9 +246,7 @@ public class FrmAddExercicio extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jp_Main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jp_Main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -194,7 +260,33 @@ public class FrmAddExercicio extends javax.swing.JFrame {
     private void jb_AddWorkoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_AddWorkoutActionPerformed
         DBController db = new DBController("fitpro.db");
         
-        String name = jtf_Name.getText(), intensity = jtf_Intensity.getText(), difficult = jtf_Difficult.getText(), area = "";
+        String name = jtf_Name.getText(), intensity = "", difficult = "", area = "";
+        
+        // INTENSITY
+        
+        if(jcb_IntHigh.isSelected()){
+            intensity = "Alta";
+        }
+        if(jcb_IntMedium.isSelected()){
+            intensity = "Média";
+        }
+        if(jcb_IntLow.isSelected()){
+            intensity = "Baixa";
+        }
+        
+        // DIFFICULT
+        
+        if(jcb_DifHigh.isSelected()){
+            difficult = "Alta";
+        }
+        if(jcb_DifMedium.isSelected()){
+            difficult = "Média";
+        }
+        if(jcb_DifLow.isSelected()){
+            difficult = "Baixa";
+        }
+        
+        // AREA
         
         if(jcb_Upper.isSelected()){
             area = "Upper";
@@ -218,6 +310,8 @@ public class FrmAddExercicio extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Erro: " + e.getMessage());
         }
+        
+        dispose();
     }//GEN-LAST:event_jb_AddWorkoutActionPerformed
 
     /**
@@ -256,20 +350,26 @@ public class FrmAddExercicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup bg_Areas;
+    private javax.swing.ButtonGroup bg_Difficult;
+    private javax.swing.ButtonGroup bg_Intensity;
     private javax.swing.JButton jb_AddWorkout;
     private javax.swing.JButton jb_Return;
     private javax.swing.JCheckBox jcb_Core;
+    private javax.swing.JCheckBox jcb_DifHigh;
+    private javax.swing.JCheckBox jcb_DifLow;
+    private javax.swing.JCheckBox jcb_DifMedium;
+    private javax.swing.JCheckBox jcb_IntHigh;
+    private javax.swing.JCheckBox jcb_IntLow;
+    private javax.swing.JCheckBox jcb_IntMedium;
     private javax.swing.JCheckBox jcb_Lower;
     private javax.swing.JCheckBox jcb_Upper;
-    private javax.swing.JLabel jl_Difficult;
-    private javax.swing.JLabel jl_Intensity;
     private javax.swing.JLabel jl_Name;
     private javax.swing.JPanel jp_Areas;
+    private javax.swing.JPanel jp_Difficult;
     private javax.swing.JPanel jp_Form;
+    private javax.swing.JPanel jp_Intensity;
     private javax.swing.JPanel jp_Main;
-    private javax.swing.JTextField jtf_Difficult;
-    private javax.swing.JTextField jtf_Intensity;
     private javax.swing.JTextField jtf_Name;
     // End of variables declaration//GEN-END:variables
 }

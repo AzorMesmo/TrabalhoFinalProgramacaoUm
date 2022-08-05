@@ -151,28 +151,28 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jl_Protein">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Proteina"/>
+                <Property name="text" type="java.lang.String" value="Prote&#xed;na (100g)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jtf_Protein">
             </Component>
             <Component class="javax.swing.JLabel" name="jl_Carbohydrate">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Carboidrato"/>
+                <Property name="text" type="java.lang.String" value="Carboidrato (100g)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jtf_Carbohydrate">
             </Component>
             <Component class="javax.swing.JLabel" name="jl_Fat">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Gordura"/>
+                <Property name="text" type="java.lang.String" value="Gordura (100g)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jtf_Fat">
             </Component>
             <Component class="javax.swing.JLabel" name="jl_Calorie">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Calorias"/>
+                <Property name="text" type="java.lang.String" value="Calorias (100g)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jtf_Calorie">

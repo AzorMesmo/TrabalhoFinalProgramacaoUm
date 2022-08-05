@@ -4,6 +4,10 @@
  */
 package forms;
 
+import java.sql.*;
+import javax.swing.*;
+import javax.swing.table.*;
+
 /**
  *
  * @author gabri
@@ -15,6 +19,28 @@ public class FrmAlimentos extends javax.swing.JFrame {
      */
     public FrmAlimentos() {
         initComponents();
+        loadFoodData();
+    }
+    
+    public void loadFoodData() {
+        DBController db = new DBController("fitpro.db");
+        
+        try {
+            db.connect();
+            ResultSet rset = db.getFood();
+            DefaultTableModel table = new DefaultTableModel(new String[]{"Nome", "Proteina (100g)", "Carboidrato (100g)", "Gordura (100g)", "Calorias (100g)"}, 0);
+            
+            while(rset.next()){
+                table.addRow(new Object[]{rset.getString("name"), rset.getString("protein"), rset.getString("carbohydrate"), rset.getString("fat"), rset.getString("calorie")});
+            }
+            
+            db.disconnect();
+            
+            jt_Foods.setModel(table);
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }
 
     /**
@@ -31,6 +57,7 @@ public class FrmAlimentos extends javax.swing.JFrame {
         jt_Foods = new javax.swing.JTable();
         jb_Return = new javax.swing.JButton();
         jb_AddFood = new javax.swing.JButton();
+        jb_Refresh = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -82,6 +109,13 @@ public class FrmAlimentos extends javax.swing.JFrame {
             }
         });
 
+        jb_Refresh.setText("Atualizar Tabela");
+        jb_Refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_RefreshActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jp_MainLayout = new javax.swing.GroupLayout(jp_Main);
         jp_Main.setLayout(jp_MainLayout);
         jp_MainLayout.setHorizontalGroup(
@@ -89,7 +123,9 @@ public class FrmAlimentos extends javax.swing.JFrame {
             .addGroup(jp_MainLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jb_AddFood)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 402, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jb_Refresh)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jb_Return)
                 .addContainerGap())
             .addComponent(jsp_Foods, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
@@ -101,7 +137,9 @@ public class FrmAlimentos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jb_Return)
-                    .addComponent(jb_AddFood))
+                    .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jb_AddFood)
+                        .addComponent(jb_Refresh)))
                 .addContainerGap())
         );
 
@@ -128,6 +166,10 @@ public class FrmAlimentos extends javax.swing.JFrame {
         FrmAddAlimento ft = new FrmAddAlimento();
         ft.setVisible(true);
     }//GEN-LAST:event_jb_AddFoodActionPerformed
+
+    private void jb_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_RefreshActionPerformed
+        loadFoodData();
+    }//GEN-LAST:event_jb_RefreshActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,6 +203,7 @@ public class FrmAlimentos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jb_AddFood;
+    private javax.swing.JButton jb_Refresh;
     private javax.swing.JButton jb_Return;
     private javax.swing.JPanel jp_Main;
     private javax.swing.JScrollPane jsp_Foods;

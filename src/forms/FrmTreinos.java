@@ -4,6 +4,10 @@
  */
 package forms;
 
+import java.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.table.*;
+
 /**
  *
  * @author gabri
@@ -15,6 +19,27 @@ public class FrmTreinos extends javax.swing.JFrame {
      */
     public FrmTreinos() {
         initComponents();
+        jl_Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/SamukaBombadoDefault.png")));
+    }
+    
+    public void loadWorkoutData(String area) {
+        DBController db = new DBController("fitpro.db");
+        
+        try {
+            db.connect();
+            ResultSet rset = db.getWorkout(area);
+            DefaultTableModel table = new DefaultTableModel(new String[]{"Nome", "Intensidade", "Dificuldade"}, 0);
+            
+            while(rset.next()){
+                table.addRow(new Object[]{rset.getString("name"), rset.getString("intensity"), rset.getString("difficult")});
+            }
+            
+            jt_Workouts.setModel(table);
+            
+            db.disconnect();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }
 
     /**
@@ -29,7 +54,7 @@ public class FrmTreinos extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jp_Main = new javax.swing.JPanel();
         jsp_WorkoutsList = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jt_Workouts = new javax.swing.JTable();
         jl_Image = new javax.swing.JLabel();
         jb_Return = new javax.swing.JButton();
         jp_Areas = new javax.swing.JPanel();
@@ -37,30 +62,35 @@ public class FrmTreinos extends javax.swing.JFrame {
         jcb_Core = new javax.swing.JCheckBox();
         jcb_Lower = new javax.swing.JCheckBox();
         jb_AddWorkout = new javax.swing.JButton();
+        jb_Refresh = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jt_Workouts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null}
             },
             new String [] {
-                "Exercício", "Intensidade", "Dificuldade"
+                "Nome", "Intensidade", "Dificuldade"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-        });
-        jsp_WorkoutsList.setViewportView(jTable1);
 
-        jl_Image.setIcon(new javax.swing.ImageIcon("/home/aluno/Área de Trabalho/TrabalhoFinalPROG1-main/src/imgs/SamukaBombadoDefault.png")); // NOI18N
-        jl_Image.setText("jLabel1");
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jsp_WorkoutsList.setViewportView(jt_Workouts);
 
         jb_Return.setText("Voltar");
         jb_Return.addActionListener(new java.awt.event.ActionListener() {
@@ -126,6 +156,13 @@ public class FrmTreinos extends javax.swing.JFrame {
             }
         });
 
+        jb_Refresh.setText("Atualizar Tabela");
+        jb_Refresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_RefreshActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jp_MainLayout = new javax.swing.GroupLayout(jp_Main);
         jp_Main.setLayout(jp_MainLayout);
         jp_MainLayout.setHorizontalGroup(
@@ -139,27 +176,30 @@ public class FrmTreinos extends javax.swing.JFrame {
                             .addComponent(jsp_WorkoutsList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jp_Areas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jl_Image, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(249, 249, 249))
+                        .addComponent(jl_Image, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jp_MainLayout.createSequentialGroup()
                         .addComponent(jb_AddWorkout)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jb_Refresh)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jb_Return)
-                        .addGap(261, 261, 261))))
+                        .addComponent(jb_Return)))
+                .addGap(249, 249, 249))
         );
         jp_MainLayout.setVerticalGroup(
             jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jp_MainLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jp_MainLayout.createSequentialGroup()
-                        .addComponent(jsp_WorkoutsList, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_MainLayout.createSequentialGroup()
+                        .addComponent(jsp_WorkoutsList, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jp_Areas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jl_Image, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jb_AddWorkout)
+                    .addGroup(jp_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jb_AddWorkout)
+                        .addComponent(jb_Refresh))
                     .addComponent(jb_Return))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -185,6 +225,7 @@ public class FrmTreinos extends javax.swing.JFrame {
 
     private void jcb_UpperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_UpperActionPerformed
         jl_Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/SamukaBombadoUpper.png")));
+        loadWorkoutData("Upper");
     }//GEN-LAST:event_jcb_UpperActionPerformed
 
     private void jb_AddWorkoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_AddWorkoutActionPerformed
@@ -194,11 +235,25 @@ public class FrmTreinos extends javax.swing.JFrame {
 
     private void jcb_CoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_CoreActionPerformed
         jl_Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/SamukaBombadoCore.png")));
+        loadWorkoutData("Core");
     }//GEN-LAST:event_jcb_CoreActionPerformed
 
     private void jcb_LowerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_LowerActionPerformed
         jl_Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/SamukaBombadoLower.png")));
+        loadWorkoutData("Lower");
     }//GEN-LAST:event_jcb_LowerActionPerformed
+
+    private void jb_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_RefreshActionPerformed
+        if(jcb_Upper.isSelected()){
+            loadWorkoutData("Upper");
+        }
+        if(jcb_Core.isSelected()){
+            loadWorkoutData("Core");
+        }
+        if(jcb_Lower.isSelected()){
+            loadWorkoutData("Lower");
+        }
+    }//GEN-LAST:event_jb_RefreshActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,8 +287,8 @@ public class FrmTreinos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton jb_AddWorkout;
+    private javax.swing.JButton jb_Refresh;
     private javax.swing.JButton jb_Return;
     private javax.swing.JCheckBox jcb_Core;
     private javax.swing.JCheckBox jcb_Lower;
@@ -242,5 +297,6 @@ public class FrmTreinos extends javax.swing.JFrame {
     private javax.swing.JPanel jp_Areas;
     private javax.swing.JPanel jp_Main;
     private javax.swing.JScrollPane jsp_WorkoutsList;
+    private javax.swing.JTable jt_Workouts;
     // End of variables declaration//GEN-END:variables
 }

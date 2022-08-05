@@ -49,13 +49,13 @@ public class FrmAddAlimento extends javax.swing.JFrame {
 
         jl_Name.setText("Nome");
 
-        jl_Protein.setText("Proteina");
+        jl_Protein.setText("Proteína (100g)");
 
-        jl_Carbohydrate.setText("Carboidrato");
+        jl_Carbohydrate.setText("Carboidrato (100g)");
 
-        jl_Fat.setText("Gordura");
+        jl_Fat.setText("Gordura (100g)");
 
-        jl_Calorie.setText("Calorias");
+        jl_Calorie.setText("Calorias (100g)");
 
         javax.swing.GroupLayout jb_FormLayout = new javax.swing.GroupLayout(jb_Form);
         jb_Form.setLayout(jb_FormLayout);
@@ -180,14 +180,18 @@ public class FrmAddAlimento extends javax.swing.JFrame {
             
             if(name.equals("") || protein.equals("") || carbohydrate.equals("") || fat.equals("") || calorie.equals("")){
                 JOptionPane.showMessageDialog(this, "Falta Informações Para O Cadastro !");
+            } else if(!Utilities.isNumeric(protein) || !Utilities.isNumeric(carbohydrate) || !Utilities.isNumeric(fat) || !Utilities.isNumeric(calorie)){
+                JOptionPane.showMessageDialog(this, "Utilize Apenas Números Nos Campos: Proteína (100g), Carboidrato (100g), Gordura (100g) e Calorias (100g) !");
             } else {
                 db.connect();
                 db.setFood(name, protein, carbohydrate, fat, calorie);
                 db.disconnect();
                 JOptionPane.showMessageDialog(this, "Comida Cadastrada Com Sucesso !");
+                dispose();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Erro: " + e.getMessage());
+            dispose();
         }
     }//GEN-LAST:event_jb_AddFoodActionPerformed
 
